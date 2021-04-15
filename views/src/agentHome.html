@@ -98,13 +98,16 @@
                                 <thead>
                                     <tr>
                                         <th>ID</th>
+                                        <th>Nom Complet</th>
                                         <th>Email</th>
-                                        <th>Password</th>
-                                        <th>Phone</th>
+                                        <!-- <th>Password</th> -->
+                                        <th>CIN</th>
+                                        <th>Date de Naissance</th>
+                                        <th>Matricule</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    
+                                <tbody id="employees_data">
+                                    <tr></tr>
                                 </tbody>
                             </table>
                             <!-- /.table-responsive -->
@@ -139,14 +142,24 @@
                                     </div>
                                     <div class="modal-body">
                                         <div class="form-group">
+                                            <input class="form-control" type="text" placeholder="Nom Complet" id="name" name="email" />
+                                        </div>
+                                        <div class="form-group">
                                             <input class="form-control" type="text" placeholder="Email" id="em" name="email" />
                                         </div>
                                         <div class="form-group">
                                             <input class="form-control" type="password" placeholder="Mot de Passe" id="ps" name="password" />
                                         </div>
                                         <div class="form-group">
-                                            <input class="form-control" type="text" placeholder="Telephone" id="ph" name="phone" />
+                                            <input class="form-control" type="text" placeholder="CIN" id="cin" name="email" />
                                         </div>
+                                        <div class="form-group">
+                                            <input class="form-control" type="date" placeholder="Date de Naissance" id="birth" name="email" />
+                                        </div>
+                                        <!-- auto generated matricule -->
+                                        <!-- <div class="form-group">
+                                            <input class="form-control" readonly=readOnly type="text" placeholder="Matricule Par Dafault Générer" id="rand" name="phone" />
+                                        </div> -->
                                     </div>
                                     <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>

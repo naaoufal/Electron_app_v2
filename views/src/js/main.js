@@ -41,6 +41,26 @@ function loginIn() {
     })
 }
 
+function renderEmployeesData () {
+    fetch("http://localhost:3000/api/employees/getEmployee").then(res => {
+        return res.json()
+    }).then(data => {
+        data.map(i => {
+            const html = `
+                <td>${i.id}</td>
+                <td>${i.name}</td>
+                <td>${i.mail}</td>
+                <td>${i.cin}</td>
+                <td>${i.dateOfBirth}</td>
+                <td>${i.registration_number}</td>
+            `
+            document.querySelector('#employees_data').innerHTML += html
+        })
+    })
+}
+
+renderEmployeesData()
+
 function logOut () {
     localStorage.clear()
     window.location.href = "index.html"

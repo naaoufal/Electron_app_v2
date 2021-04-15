@@ -33,5 +33,5 @@ POST http://localhost:3000/api/employees/login
 Content-Type: application/json
 
 {
-    "mail" : "test1@gmail.com"
+    "mail" : "tes1@gmail.com"
 }

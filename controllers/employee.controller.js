@@ -28,15 +28,12 @@ const addEmployee = async (req, res) => {
                     
             // }
 
-            const salt = await bcrypt.genSalt(10);
-            const hashPassword = await bcrypt.hash(req.body.password, salt)
-
             const newEmployee = new Employee({
     
                             name: req.body.name,
                             mail: req.body.mail,
                             cin: req.body.cin,
-                            password: hashPassword,
+                            password: req.body.password,
                             dateOfBirth: req.body.dateOfBirth,
                             registration_number: req.body.registration_number,
 

@@ -12,8 +12,8 @@ async function sendMail(email,subject,text,output) {
         port: 587,
         secure: false,
         auth: {
-          user: process.env.SMTP_USERNAME,
-          pass: process.env.SMTP_PASSWORD,
+          user: "mare32980@gmail.com",
+          pass: "Naoufal1996",
         },
         tls: {
           rejectUnauthorized: false,

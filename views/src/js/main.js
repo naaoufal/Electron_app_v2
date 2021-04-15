@@ -1,3 +1,6 @@
+// global variables :
+const randomCode = ("" + Math.random()).substring(2, 8);
+
 // login function 
 function loginIn() {
     const email = document.querySelector('#em').value
@@ -41,6 +44,40 @@ function loginIn() {
     })
 }
 
+// add new employee
+function addNewEmployee () {
+    const name = document.querySelector('#name').value
+    const email = document.querySelector('#em').value
+    const password = document.querySelector('#ps').value
+    const cin = document.querySelector('#cin').value
+    const birth = document.querySelector('#birth').value
+
+    //console.log(name, email, password, cin, birth)
+    fetch("http://localhost:3000/api/employees/addEmployee", {
+        method : 'POST',
+        headers : {
+            'Content-Type' : 'application/json'
+        },
+        body : JSON.stringify({
+            name : name,
+            mail : email,
+            password : password,
+            cin : cin,
+            dateOfBirth : birth,
+            registration_number : randomCode
+        })
+    }).then(res => {
+        return res.json()
+    }).then(data => {
+        if(data) {
+            location.reload()
+        } else {
+            alert("Error In Operation")
+        }
+    })
+}
+
+// render employees data in table
 function renderEmployeesData () {
     fetch("http://localhost:3000/api/employees/getEmployee").then(res => {
         return res.json()

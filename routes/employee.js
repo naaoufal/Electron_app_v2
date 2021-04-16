@@ -10,7 +10,7 @@ router.post('/login', userController.loginEmployee)
 
 router.get('/getEmployee', userController.getAllEmployee)
 
-router.get('/getEmployeeByid/:id', userController.employeeById)
+router.get('/getById/:id', userController.employeeById)
 
 
 

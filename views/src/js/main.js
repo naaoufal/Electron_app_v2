@@ -27,11 +27,13 @@ function loginIn() {
                         window.location.href = "agentHome.html"
                     } else {
                         alert("Mot de Passe ou Email Inccorect")
+                        location.reload()
                     }
                 })
             })
         } else {
             alert("Error")
+            location.reload()
         }
         // data.map(i => {
         //     if(i.email == email && i.password == password) {

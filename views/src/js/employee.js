@@ -35,6 +35,21 @@ function employeeLogin () {
     })
 }
 
+function renderEmployeesData () {
+    let info = JSON.parse(localStorage.getItem('employeeData'))
+    const html = `
+        <td>${info.id}</td>
+        <td>${info.name}</td>
+        <td>${info.mail}</td>
+        <td>${info.cin}</td>
+        <td>${info.dateOfBirth}</td>
+        <td>${info.registration_number}</td>
+    `
+    document.getElementById('employees_data').innerHTML = html
+}
+
+renderEmployeesData()
+
 function logOut () {
     localStorage.clear()
     window.location.href = "employeeLogin.html"
